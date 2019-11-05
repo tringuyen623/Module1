@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let year = parseInt(prompt('Enter a year'));
+        // if (year % 4 == 0) {
+        //     if (year % 100 == 0) {
+        //         if (year % 400 == 0) {
+        //             alert(year + ' is a leap year');
+
+        //         } else {
+        //             alert(year + ' is a Not leap year');
+        //         }
+        //     } else {
+        //         alert(year + ' is a leap year');
+        //     }
+        // } else {
+        //     alert(year + ' is a Not leap year');
+        // }
+
+
+
+        //Chỉnh sửa mã nguồn tốt hơn
+
+        // let year = parseInt(prompt('Enter a year'));
+        // let isleapYear = false;
+        // if (year % 4 == 0) {
+        //     if (year % 100 == 0) {
+        //         if (year % 400 == 0) {
+        //             isleapYear = true;
+        //         }
+        //     } else {
+        //         isleapYear = true;
+        //     }
+        // }
+        // if (isleapYear) {
+        //     alert(year + ' is a leap year');
+        // } else {
+        //     alert(year + ' is a Not year');
+        // }
+
+
+        //Đảm bảo clean code
+
+        let year = parseInt(prompt('Enter a year'));
+        let isleapYear = false;
+        let isDivisibleBy4 = year % 4 == 0;
+        if (isDivisibleBy4) {
+            let isDivisibleBy100=year%100==0;
+            if(isDivisibleBy100){
+                let isDivisibleBy400=year%400==0;
+                if(isDivisibleBy400){
+                    isleapYear=true;
+                }
+            }else{
+                isleapYear=true;
+            }
+        }
+        if (isleapYear){
+            alert(year + ' is a leap year');
+        }else{
+            alert(year + ' is a Not leap year');
+        }
+    </script>
+</body>
+
+</html>
