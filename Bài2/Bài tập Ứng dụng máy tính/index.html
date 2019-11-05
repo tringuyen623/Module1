@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+    <form>
+        <input type='number' id='input1' value=''>
+        <input type='number' id='input2' value=''>
+        <br><br>
+        <button type='button' onclick='addiTion();'>Addition(+)</button>
+        <button type='button' onclick='subTraction();'>Subtraction(-)</button>
+        <button type='button' onclick='multiPlication();'>Multiplication(x)</button>
+        <button type='button' onclick='diVision();'>Division(/)</button>
+        <p id='result'>Result</p>
+        <script>
+            function addiTion() {
+                let input1 = parseFloat(document.getElementById('input1').value);
+                let input2 = parseFloat(document.getElementById('input2').value);
+                let addiTion=input1+input2;
+
+                document.getElementById('result').innerHTML = 'Result Addition: ' + addiTion;
+            }
+            function subTraction() {
+                let input1 = parseFloat(document.getElementById('input1').value);
+                let input2 = parseFloat(document.getElementById('input2').value);
+                let subTraction=input1-input2;
+                document.getElementById('result').innerHTML = 'Result Subtraction: ' + subTraction;
+            }
+            function multiPlication(){
+                let input1 = parseFloat(document.getElementById('input1').value);
+                let input2 = parseFloat(document.getElementById('input2').value);
+                let multiPlication=input1*input2;
+                document.getElementById('result').innerHTML = 'Result Multiplication:' + multiPlication;
+            }
+            function diVision(){
+                let input1 = parseFloat(document.getElementById('input1').value);
+                let input2 = parseFloat(document.getElementById('input2').value);
+                let diVision=input1/input2;
+                document.getElementById('result').innerHTML='Result Division: ' + diVision;
+            }
+        </script>
+    </form>
+</body>
+
+</html>
