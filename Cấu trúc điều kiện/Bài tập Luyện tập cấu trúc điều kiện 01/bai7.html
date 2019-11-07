@@ -15,9 +15,9 @@
     function bill(){
         let used=parseFloat(document.getElementById('used').value);
         const monthlyFee= 25000;
-        let first50m=600;
-        let after50m=400;
-        let after200m=200;
+        let first50m=600;  //fee for the first 50 minutes.
+        let after50m=400;  //fee for the continue 150 minutes.
+        let after200m=200; //fee for the after 200 minutes.
         let bill;
         if (used<=50){
             bill=first50m*used+monthlyFee;
