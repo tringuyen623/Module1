@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Days of the month</h1>
+    <form>
+        <input type='number' id='month' value=0 min=0>
+        <button type='button' onclick="count()">Count days</button>
+    </form>
+    <p id='result'></p>
+   <script>
+   function count(){
+       let month=parseInt(document.getElementById('month').value);
+       switch(month){
+           case 2:
+           document.getElementById('result').innerHTML="This month have 28 or 29 days";
+           break;
+           case 1:
+           case 3:
+           case 5:
+           case 7:
+           case 8:
+           case 10:
+           case 12:
+           document.getElementById('result').innerHTML="This month have 31 days";
+           break;
+           case 4:
+           case 6:
+           case 9:
+           case 11:
+           document.getElementById('result').innerHTML="This month have 30 days";
+           break;
+           default:
+           alert('You input wrong');
+       }
+   }
+   </script>
+    <p></p>
+</body>
+</html>
