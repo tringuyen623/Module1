@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Body mass index-BMI</h1>
+    <table>
+        <tr>
+            <td>Enter the weight:</td>
+            <td> <input type='number' id='weight' value=0></td>
+        </tr>
+        <tr>
+            <td> Enter the height:</td>
+            <td> <input type='number' id='height' value=0></td>
+        </tr>
+
+    </table>
+
+
+    <button type="button" onclick='check();'>Check</button>
+    <p id='result'></p>
+    <script>
+        function check() {
+            let weight = parseFloat(document.getElementById('weight').value);
+            let height = parseFloat(document.getElementById('height').value);
+            let BMI = weight * (height*height);
+            console.log(BMI);
+            if (BMI < 18.5) {
+
+                document.getElementById('result').innerHTML = 'Underweight';
+            } else if (BMI < 25) {
+
+                document.getElementById('result').innerHTML = 'Normal';
+            } else if (BMI < 30) {
+
+                document.getElementById('result').innerHTML = 'Overweight';
+            } else {
+
+                document.getElementById('result').innerHTML = 'Obese';
+
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>
