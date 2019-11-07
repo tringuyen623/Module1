@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phone bill</title>
+</head>
+<body>
+    <h1>Monthly phone bill</h1>
+    <input type='number' id='used' value=0>
+    <button type="button" onclick="bill()">Bill</button>
+    <p id='result'></p>
+    <script>
+    function bill(){
+        let used=parseFloat(document.getElementById('used').value);
+        const monthlyFee= 25000;
+        let first50m=600;
+        let after50m=400;
+        let after200m=200;
+        let bill;
+        if (used<=50){
+            bill=first50m*used+monthlyFee;
+        }else if(used<=200 & used>50){
+            bill=first50m*50+(after50m*(used-50))+monthlyFee;
+        }else if(used>200){
+            bill=first50m*50+(after200m*(used-200))+(150*after50m)+monthlyFee;
+        }
+        document.getElementById('result').innerHTML='Your bill is: '+bill +'vnd';
+    }
+    </script>
+</body>
+</html>

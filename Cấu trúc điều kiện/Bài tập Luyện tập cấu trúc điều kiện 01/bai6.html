@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Sales commission</h1>
+    <input type='number' id='sales' value=0>
+    <button type="button" onclick='commission();'>Commission</button>
+    <p id='result'></p>
+    <script>
+        function commission() {
+            let sales = parseFloat(document.getElementById('sales').value);
+            let comMission;
+            if (sales <= 50000000) {
+            
+                alert('A little more effort required!');
+            } else if (sales <= 100000000) {
+                comMission = sales * 5 / 100;
+            } else if (sales <= 300000000) {
+                comMission = sales * 10 / 100;
+            } else if (sales <= 500000000) {
+                comMission = sales * 15 / 100;
+            } else {
+                comMission = sales * 20 / 100
+               
+            } 
+            // Just appear commission on screen if have enough
+            if (comMission>0){
+                document.getElementById('result').innerHTML = 'Comission is: ' + comMission;
+            }
+            
+            
+        }
+    </script>
+</body>
+
+</html>

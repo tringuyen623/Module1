@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bài 4</title>
+</head>
+
+<body>
+    <!-- Tập luyện thêm về form, input -->
+    <h1>Find the largest number</h1>
+    <form>
+        Enter the number a:
+        <input type='number' id='numbera'>
+        <br><br>
+        Enter the number b:
+        <input type='number' id='numberb'>
+        <br><br>
+        Enter the number c:
+        <input type='number' id='numberc'>
+        <br><br>
+        <button type='button'
+            onclick="check();">Check</button>
+        <p id='result'></p>
+
+    </form>
+    <script>
+        function check() {
+            let a = parseInt(document.getElementById('numbera').value);
+            let b = parseInt(document.getElementById('numberb').value);
+            let c = parseInt(document.getElementById('numberc').value);
+            let max = a;
+
+            if (b > max) {
+                max = b;
+            } if (c > max) {
+                max = c
+            }
+            document.getElementById('result').innerHTML = 'The largest number is: ' + max
+        }
+
+    </script>
+</body>
+
+</html>
