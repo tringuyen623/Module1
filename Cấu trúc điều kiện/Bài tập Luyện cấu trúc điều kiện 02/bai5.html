@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>The area of Triangle</h1>
+    <table>
+        <tr>
+            <td>Input side a</td>
+            <td>Input side b</td>
+        </tr>
+        <tr>
+            <td> <input type="number" id="input" value="0"></td>
+            <td>
+                <input type="number" id="input1" value="0">
+            </td>
+            <td>
+                <button type='button' onclick="count()">Count</button>
+            </td>
+        </tr>
+    </table>
+    <p id='result'></p>
+    <script>
+        function count() {
+
+            let input = parseInt(document.getElementById('input').value); //The default unit is meter
+            let input1 = parseInt(document.getElementById('input1').value);  //The default unit is meter
+            let area = input * input1 / 2;
+            if (input <= 0 || input1 <= 0) {
+                alert('Wrong input');
+            } else {
+                document.getElementById('result').innerHTML = area + ' m' + '2'.sup();
+            }
+        }
+    </script>
+</body>
+
+</html>

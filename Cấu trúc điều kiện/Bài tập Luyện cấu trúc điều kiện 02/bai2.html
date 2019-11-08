@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Measurement conversion</h1>
+    <table>
+        <tr>
+            <td>Input here</td>
+            <td>Unit of measurement</td>
+
+        </tr>
+
+        <tr>
+            <td> <input type='number' id='input' value=0></td>
+            <td>
+                <select id="select" value=''>
+                    <option value="MtoF">Meter to Feet</option>
+                    <option value="FtoM">Feet to Meter</option>
+                </select>
+            </td>
+           <td>
+            <button type='button' onclick="convert()">Convert</button>
+           </td>
+        </tr>
+    </table>
+    <p id='result'></p>
+    <script>
+        function convert() {
+            let input = parseFloat(document.getElementById('input').value);
+            let MtoF = input * 3.2808;
+            let FtoM = input / 3.2808;
+            if (select.value === "MtoF") {
+                document.getElementById('result').innerHTML = MtoF + ' ft';
+            } else if (select.value === "FtoM") {
+                document.getElementById('result').innerHTML = FtoM + ' m';
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

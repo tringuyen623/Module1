@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Area of square</h1>
+    <table>
+        <tr>
+            <td>Input side legnth</td>
+        </tr>
+        <tr>
+            <td> <input type='number' id='side' value=0></td>
+            <td><button type='button' onclick="count()">Count</button></td>
+        </tr>
+    </table>
+    <p id='result'></p>
+
+    <script>
+        function count() {
+            let side = parseFloat(document.getElementById('side').value);  //The default unit is meter
+            let area = side * side;
+            if (side<=0){
+                alert ('Wrong input');
+            }else {
+                document.getElementById('result').innerHTML = area + ' m' + '2'.sup();
+            } 
+        }
+    </script>
+</body>
+
+</html>

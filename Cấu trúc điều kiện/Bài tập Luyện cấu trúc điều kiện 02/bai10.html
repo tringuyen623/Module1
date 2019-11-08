@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let eConsumption = parseFloat(prompt('Nhập'));
+        let kWh50 = 1678;
+        let kWhafter50 = 1734;
+        let kWhafter100 = 2014;
+        let electricBill;
+
+        if (eConsumption <= 50) {
+            electricBill = eConsumption * kWh50;
+            alert('Your electricity bill is: ' + electricBill);
+            console.log(electricBill)
+        } else if (eConsumption <= 100) {
+            electricBill = (eConsumption - 50) * kWhafter50 + kWh50 * 50;
+            alert('Your electricity bill is: ' + electricBill);
+        } else {
+            electricBill = ((eConsumption - 100) * kWhafter100) + (kWhafter50 * 50) + (kWh50 * 50);
+            alert('Your electricity bill is: ' + electricBill);
+        }
+
+    </script>
+</body>
+
+</html>

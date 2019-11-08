@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let principle=parseFloat(prompt('Enter the amount of money'));
+    let timePeriods=parseFloat(prompt('Enter the number of months'));
+    let interestRate1=10/100;
+    let interestRate2=15/100;
+    let interestRate3=20/100;
+    let interest; 
+    if (timePeriods<=12){
+        interest=principle*Math.pow((1+interestRate1), timePeriods);
+    }else if(timePeriods<=24){
+        interest=principle*Math.pow((1+interestRate2), timePeriods);
+    }else {
+        interest=principle*Math.pow((1+interestRate3), timePeriods);
+    }
+    alert('Your interest is: ' + interest);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Celsius to Fahrenheit conversion</h1>
+    <table>
+        <tr>
+            <td>Input here</td>
+            <td>Degrees</td>
+        </tr>
+
+        <tr>
+            <td> <input type="number" id="input" value="0"></td>
+            <td>
+                <select id="select" value=''>
+                    <option value="CtoF">Celsius to Fahrenheit</option>
+                    <option value="FtoC">Fahrenheit to Celsius</option>
+                </select>
+            </td>
+            <td>
+                <button type='button' onclick="convert()">Convert</button>
+            </td>
+        </tr>
+    </table>
+    <p id='result'></p>
+    <script>
+        function convert() {
+            let input = parseFloat(document.getElementById('input').value);
+            let CtoF = input * 5 / 9 + 32;
+            let FtoC = (input - 32) / (9 / 5);
+            if (select.value === "CtoF") {
+                document.getElementById('result').innerHTML = CtoF + 'o'.sup()+'F';
+            } else if (select.value === "FtoC") {
+                document.getElementById('result').innerHTML = FtoC + 'o'.sup()+'C';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Linear equation ax+b=0</h1>
+    <form>
+        <input type='number' id='inputa' value="0">
+        <input type="number" id='inputb' value="0">
+        <button type="button" onclick="solver()">Solver</button>
+    </form>
+    <p id='result'></p>
+    <script>
+
+        function solver() {
+            let a = parseFloat(document.getElementById('inputa').value);
+            let b = parseFloat(document.getElementById('inputb').value);
+            let x;
+            if (a != 0) {
+                x = -b / a;
+                document.getElementById('result').innerHTML = 'The root of equation is: ' + x;
+            } else if (b != 0) {
+                document.getElementById('result').innerHTML = 'The equation has no root';
+            } else {
+                document.getElementById('result').innerHTML = 'The equation has countless root';
+            }
+
+        }
+    </script>
+</body>
+
+</html>

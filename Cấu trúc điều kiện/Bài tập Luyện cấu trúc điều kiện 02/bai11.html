@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let income = parseFloat(prompt('Enter the income')); //Unit is milion dong.
+        let personalTaxincome;
+        if (income <= 0) {
+            personalTaxincome = 0;
+        } else if (income <= 5) {
+            personalTaxincome = income * 5 / 100;
+
+        } else if (income <= 10) {
+            personalTaxincome = income * 10 / 100;
+        } else if (income <= 18) {
+            personalTaxincome = income * 15 / 100;
+        } else if (income <= 32) {
+            personalTaxincome = income * 20 / 100;
+        } else if (income <= 52) {
+            personalTaxincome = income * 25 / 100;
+        } else if (income <= 80) {
+            personalTaxincome = income * 30 / 100;
+        } else {
+            personalTaxincome = income * 35 / 100;
+        }
+        alert('Your personal tax income is: ' + personalTaxincome);
+
+
+    </script>
+</body>
+
+</html>
