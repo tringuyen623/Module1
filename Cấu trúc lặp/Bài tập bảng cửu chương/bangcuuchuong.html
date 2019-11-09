@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let multibleTable = '<table border="1" width="600" cellspacing="0" cellpading="3"';
+        for (let numberA = 1; numberA <= 10; numberA++) {
+            multibleTable = multibleTable + '<tr>';
+            for (let numberB = 2; numberB <= 9; numberB++) {
+                let result = numberA * numberB;
+                multibleTable = multibleTable + '<td>' + numberB + 'x' + numberA + '=' + result;
+            }
+            multibleTable = multibleTable + '</tr>';
+        }
+        multibleTable = multibleTable + '</table>';
+        document.write(multibleTable);
+    </script>
+</body>
+
+</html>
