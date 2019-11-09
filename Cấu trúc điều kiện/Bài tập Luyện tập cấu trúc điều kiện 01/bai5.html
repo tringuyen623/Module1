@@ -16,7 +16,7 @@
             <td> <input type='number' id='test'></td>
         </tr>
         <tr>
-           <td> Enter the score of the midterm exam:</td>
+            <td> Enter the score of the midterm exam:</td>
             <td> <input type='number' id='midterm'></td>
         </tr>
         <tr>
@@ -26,19 +26,19 @@
         <tr></tr>
     </table>
     <button type='button' onclick="check();">Check</button>
-       <p id='result'></p>
+    <p id='result'></p>
 
-    
+
     <script>
         function check() {
             let test = parseInt(document.getElementById('test').value);
             let midterm = parseInt(document.getElementById('midterm').value);
             let final = parseInt(document.getElementById('final').value);
-            let average = (test + midterm + final) / 3
+            let average = (test + (midterm * 2) + (final * 3)) / 7
             if (test > 10 || midterm > 10 || final > 10 || test < 0 || midterm < 0 || final < 0) {
                 alert('Score you enter is wrong');
-            
-            }else if (average >= 8) {
+
+            } else if (average >= 8) {
                 document.getElementById('result').innerHTML = 'Grade: Excellent';
             } else if (average >= 6) {
                 document.getElementById('result').innerHTML = 'Grade: Good';

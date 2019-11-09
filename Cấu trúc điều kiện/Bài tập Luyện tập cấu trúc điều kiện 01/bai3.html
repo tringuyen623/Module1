@@ -14,8 +14,7 @@
     </h1>
     <form>
 
-        <b>Enter interger number:</b>
-        <input type="number" id="input">
+        <input type="number" id="input" placeholder="Enter interger number">
         <input type=button id='button' value='Check' onclick='check();'>
 
     </form>
@@ -24,10 +23,12 @@
         function check() {
             let number = document.getElementById('input').value;
             parseInt(number);
-            if (number > 0) {
-                document.getElementById('result').innerHTML='Result: The input number bigger than 0';
+            if (number == 0) {
+                alert('Wrong number')
+            } else if (number > 0) {
+                document.getElementById('result').innerHTML = 'Result: The input number bigger than 0';
             } else {
-                document.getElementById('result').innerHTML='Result: The input number smaller than 0';
+                document.getElementById('result').innerHTML = 'Result: The input number smaller than 0';
             }
         }
     </script>

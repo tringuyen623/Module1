@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Phone bill</title>
 </head>
+
 <body>
     <h1>Monthly phone bill</h1>
     <input type='number' id='used' value=0>
     <button type="button" onclick="bill()">Bill</button>
     <p id='result'></p>
     <script>
-    function bill(){
-        let used=parseFloat(document.getElementById('used').value);
-        const monthlyFee= 25000;
-        let first50m=600;  //fee for the first 50 minutes.
-        let after50m=400;  //fee for the continue 150 minutes.
-        let after200m=200; //fee for the after 200 minutes.
-        let bill;
-        if (used<=50){
-            bill=first50m*used+monthlyFee;
-        }else if(used<=200){
-            bill=first50m*50+(after50m*(used-50))+monthlyFee;
-        }else if(used>200){
-            bill=first50m*50+(after200m*(used-200))+(150*after50m)+monthlyFee;
+        function bill() {
+            let used = parseFloat(document.getElementById('used').value);
+            const monthlyFee = 25000;
+            let callFee1 = 600;
+            let callFee2 = 400;
+            let callFee3 = 200;
+            let bill;
+            if (used <= 50) {
+                bill = callFee1 * used + monthlyFee;
+            } else if (used <= 200) {
+                bill = callFee1 * 50 + (callFee2 * (used - 50)) + monthlyFee;
+            } else if (used > 200) {
+                bill = (callFee3 * (used - 200)) + (150 * callFee2) + callFee1 * 50 + monthlyFee;
+            }
+            document.getElementById('result').innerHTML = 'Your bill is: ' + bill + 'vnd';
         }
-        document.getElementById('result').innerHTML='Your bill is: '+bill +'vnd';
-    }
     </script>
 </body>
+
 </html>

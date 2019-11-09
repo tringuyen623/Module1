@@ -10,22 +10,18 @@
 
 <body>
     <!-- Tập luyện thêm về form, input -->
-    <h1>Find the largest number</h1>
-    <form>
-        Enter the number a:
-        <input type='number' id='numbera'>
+    <h1>Find the largest number</h1>        
+        <input type='number' id='numbera' placeholder="Enter the number a">
         <br><br>
-        Enter the number b:
-        <input type='number' id='numberb'>
+      
+        <input type='number' id='numberb' placeholder="Enter the number b">
         <br><br>
-        Enter the number c:
-        <input type='number' id='numberc'>
+      
+        <input type='number' id='numberc' placeholder="Enter the number c">
         <br><br>
-        <button type='button'
-            onclick="check();">Check</button>
+        <button type='button' onclick="check();">Check</button>
         <p id='result'></p>
 
-    </form>
     <script>
         function check() {
             let a = parseInt(document.getElementById('numbera').value);

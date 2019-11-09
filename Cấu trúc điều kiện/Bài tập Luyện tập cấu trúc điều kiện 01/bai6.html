@@ -18,7 +18,6 @@
             let sales = parseFloat(document.getElementById('sales').value);
             let comMission;
             if (sales <= 50000000) {
-            
                 alert('A little more effort required!');
             } else if (sales <= 100000000) {
                 comMission = sales * 5 / 100;
@@ -28,14 +27,12 @@
                 comMission = sales * 15 / 100;
             } else {
                 comMission = sales * 20 / 100
-               
-            } 
-            // Just appear commission on screen if have enough
-            if (comMission>0){
+            }
+            if (comMission > 0) {
                 document.getElementById('result').innerHTML = 'Comission is: ' + comMission;
             }
-            
-            
+
+
         }
     </script>
 </body>
