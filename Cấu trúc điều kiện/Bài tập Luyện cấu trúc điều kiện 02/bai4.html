@@ -12,23 +12,14 @@
     <h1>The area of Rectangle</h1>
     <table>
         <tr>
-            <td>Input side a</td>
-            <td>Input side b</td>
-        </tr>
-
-        <tr>
-            <td> <input type="number" id="input" value="0"></td>
-            <td>
-                <input type="number" id="input1" value="0">
-            </td>
-            <td>
-                <button type='button' onclick="count()">Count</button>
-            </td>
-
+            <td> <input type="number" id="input" placeholder="Enter side a"></td>
+            <td><input type="number" id="input1" placeholder="Enter side b"></td>
+            <td><button type='button' onclick="count()">Count</button></td>
         </tr>
 
     </table>
     <p id='result'></p>
+
     <script>
         function count() {
             let input = parseInt(document.getElementById('input').value);  //The default unit is meter
@@ -36,9 +27,9 @@
             let area = input * input1
             if (input <= 0 || input1 <= 0) {
                 alert('Wrong input');
-            }else {
+            } else {
                 document.getElementById('result').innerHTML = area + ' m' + '2'.sup();
-            } 
+            }
         }
     </script>
 </body>

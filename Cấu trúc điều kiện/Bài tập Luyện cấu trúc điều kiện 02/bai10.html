@@ -11,22 +11,21 @@
 <body>
     <script>
         let eConsumption = parseFloat(prompt('Nhập'));
-        let kWh50 = 1678;
-        let kWhafter50 = 1734;
-        let kWhafter100 = 2014;
+        let rate1 = 1678;
+        let rate2 = 1734;
+        let rate3 = 2014;
         let electricBill;
 
+
         if (eConsumption <= 50) {
-            electricBill = eConsumption * kWh50;
-            alert('Your electricity bill is: ' + electricBill);
-            console.log(electricBill)
+            electricBill = eConsumption * rate1;
         } else if (eConsumption <= 100) {
-            electricBill = (eConsumption - 50) * kWhafter50 + kWh50 * 50;
-            alert('Your electricity bill is: ' + electricBill);
+            electricBill = (eConsumption - 50) * rate2 + rate1 * 50;
         } else {
-            electricBill = ((eConsumption - 100) * kWhafter100) + (kWhafter50 * 50) + (kWh50 * 50);
-            alert('Your electricity bill is: ' + electricBill);
+            electricBill = ((eConsumption - 100) * rate3) + (rate2 * 50) + (rate1 * 50);
         }
+        let vat = electricBill * 10 / 100;
+        alert('Your electricity bill is: ' + (electricBill + vat));
 
     </script>
 </body>
