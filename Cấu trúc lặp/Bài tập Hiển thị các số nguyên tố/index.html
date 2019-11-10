@@ -10,10 +10,11 @@
 
 <body>
     <script>
-        let n = parseInt(prompt('Enter n'));
+        let n = parseInt(prompt('Enter the number of Primes numbers to find:'));
         let N = 2;
+        let count=0;
 
-        for (let count = 0; count < n; count++) {
+        for (let count=0; count < n;) {
             let check = 0;
             for (let index = 2; index <= Math.sqrt(N); index++) {
 
@@ -24,6 +25,7 @@
             }
             if (check == 0) {
                 document.write(N + ' is a Primes number' + '<br>');
+                count ++;
             }
             N=N+1;
         }
