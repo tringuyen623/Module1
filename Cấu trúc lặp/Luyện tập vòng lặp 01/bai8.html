@@ -12,7 +12,23 @@
     <button type="button" id='play' onclick="playGuess();">Guess</button>
     <script>
         function playGuess() {
-        
+            let inputRange = +prompt('Enter your range number');
+            let guessNumber = Math.floor(Math.random() * (inputRange+1));
+            let i = 0
+            while (i < 3) {
+
+                let inputNumber = +prompt('Enter your number');
+                console.log(guessNumber);
+                if (inputNumber === guessNumber) {
+                    alert('Congratulation');
+                    break;
+                }
+                if (inputNumber !== guessNumber) {
+                    alert('Wrong. Please guess again');
+                }
+                i++;
+            }
+
         }
     </script>
 </body>
