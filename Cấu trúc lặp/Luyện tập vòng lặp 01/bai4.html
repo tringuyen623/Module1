@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //f(n) = f(n-1) +f(n-2)
+        let a = 0; //a  is the f(n-2)
+        let b = 1; //b is the f(n - 1)
+        let c=0; //Current number.
+        for (i = 0; i >=0 ; i++) {
+           
+            a = b;
+            b = c;
+            c = b + a; 
+            if (c%5==0) {
+                document.write(c);
+                break;
+        } 
+        }
+    </script>
+</body>
+</html>
