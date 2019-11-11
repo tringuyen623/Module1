@@ -11,23 +11,24 @@
 <body>
     <script>
         let n = parseInt(prompt('Enter the number of Primes numbers to find:'));
-        let N = 2;
-        let count=0;
+        /*The Prime numbers is a number just has two factors: one and itself.
+        2 is a minimum Prime numbers. */
+        let primeNumber = 2;
 
         for (let count=0; count < n;) {
             let check = 0;
-            for (let index = 2; index <= Math.sqrt(N); index++) {
+            for (let index = 2; index <= Math.sqrt(primeNumber); index++) {
 
-                if (N % index == 0) {
-                    console.log(N + ' is not a Primes number');
+                if (primeNumber % index == 0) {
+                    console.log(primeNumber + ' is not a Primes number');
                     check++
                 }
             }
             if (check == 0) {
-                document.write(N + ' is a Primes number' + '<br>');
+                document.write(primeNumber + ' is a Primes number' + '<br>');
                 count ++;
             }
-            N=N+1;
+            primeNumber+=1;
         }
     </script>
 </body>
