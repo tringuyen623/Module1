@@ -13,21 +13,27 @@
     <script>
         function playGuess() {
             let inputRange = +prompt('Enter your range number');
-            let guessNumber = Math.floor(Math.random() * (inputRange+1));
-            let i = 0
-            while (i < 3) {
+            let guessNumber = Math.floor(Math.random() * (inputRange + 1));
+            if (inputRange <= 0) {
+                alert('Wrong input');
+            } else {
+                let i = 0;
+                while (i < 3) {
 
-                let inputNumber = +prompt('Enter your number');
-                console.log(guessNumber);
-                if (inputNumber === guessNumber) {
-                    alert('Congratulation');
-                    break;
+                    let inputNumber = +prompt('Enter your number');
+                    console.log(guessNumber);
+                    if (inputNumber === guessNumber) {
+                        alert('Congratulation');
+                        break;
+                    }
+                    if (inputNumber !== guessNumber) {
+                        alert('Wrong. Please guess again');
+                    }
+                    i++;
                 }
-                if (inputNumber !== guessNumber) {
-                    alert('Wrong. Please guess again');
-                }
-                i++;
+                alert('You lose! The correct number is: ' + guessNumber);
             }
+
 
         }
     </script>
