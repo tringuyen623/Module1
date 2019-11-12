@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Print the Fibonacci numbers</title>
+</head>
+<body>
+    <script>
+    let amount = +prompt('Enter the number of Fibonacci numbers');
+        /*f(n) = f(n-1) +f(n-2)
+        Fibonacci magic initialization: */
+        let a = 0; //a  is the f(n-2)
+        let b = 1; //b is the f(n - 1)
+        let c=0; //Current number.
+        for (i = 0; i < amount; i++) {
+            document.write(c + '<br>');
+            a = b;
+            b = c;
+            c = b + a;
+        } 
+    </script>
+</body>
+</html>

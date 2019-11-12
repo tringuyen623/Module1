@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= 15; j++) {
+
+                switch (i) {
+                    case 2:
+                    case 3:
+                    case 4:
+                        switch (j) {
+                            case 1:
+                            case 15:
+                                document.write('*');
+                                break;
+                            case 2:
+                            case 3:
+                            case 4:
+                            case 5:
+                            case 6:
+                            case 7:
+                            case 8:
+                            case 9:
+                            case 10:
+                            case 11:
+                            case 12:
+                            case 13:
+                            case 14:
+                                document.write('&nbsp', '&nbsp');
+                        }
+                        continue;
+                }
+                document.write('*');
+            } document.write('<br>');
+        }
+
+
+
+    </script>
+</body>
+
+</html>

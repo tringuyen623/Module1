@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+                let principle=parseFloat(prompt('Enter the amount of money'));
+                let n=parseFloat(prompt('Enter the number of times interest is compounded per year'));
+                let timePeriods= parseInt(prompt('Enter the period time(years) of lent or deposited'))
+                let interestRate=parseFloat(prompt('Enter the interest rate'))/100;
+                console.log(interestRate);
+                let amount; //The value of money in the future include principle and interest
+                let interest; 
+
+                for (let i=1; i <= timePeriods; i++){
+                    amount = principle * Math.pow((1 + (interestRate/n)), i);
+                    console.log(amount);
+                    
+                   
+                }
+                interest = amount - principle;
+                console.log(principle);
+                document.write('The interest after ' + timePeriods + ' years is: ' + interest);
+               
+                </script>
+</body>
+</html>

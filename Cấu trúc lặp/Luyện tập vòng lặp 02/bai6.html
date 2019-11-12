@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        for (let i = 5; i > 0; i -= 4) {
+            for (let j = 1; j <= 10; j++) {
+                if (j >= i) {
+                    document.write('*');
+                } else {
+                    document.write('&nbsp');
+                }
+
+            }
+            for (let k = 1; k <= 10; k++) {
+                if (k >= i) {
+                    document.write('*');
+                } else {
+                    document.write('&nbsp;&nbsp');
+                }
+
+            }
+ 
+            document.write('<br>');
+
+        }
+
+        for (let l = 21; l > 0; l -= 4) {
+            for (let m = 20; m > 0; m--) {
+                if (m <= l) {
+                    document.write('*');
+                } else {
+                    document.write('&nbsp');
+                }
+            }
+            document.write('<br>');
+        }
+
+    </script>
+</body>
+
+</html>
