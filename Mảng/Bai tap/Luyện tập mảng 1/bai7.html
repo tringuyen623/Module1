@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let int = [];
+        let intV = Math.floor(Math.random() * 10);
+        let check = 0;
+        for (i = 0; i < 10; i++) {
+            let n = Math.floor(Math.random() * 10);
+            int.push(n);
+        }
+        
+        for (j=0; j< int.length; j++){
+            let a=int.indexOf(intV);
+            if (a!==-1){
+                int.splice(a,1);
+                int.push('0');
+            }
+        }
+        document.write(int)
+    </script>
+</body>
+</html>

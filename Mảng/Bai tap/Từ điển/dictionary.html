@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dictionary</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="word">
+        <select name="Language" id="language">Change Language
+            <option value="vietnamese">Vietnamese to English</option>
+            <option value="english">English to Vietnamese</option>
+        </select>
+        <input type="button" id="translate" value="Translate" onclick="tranSlate();">
+        <br>
+        <!-- <input type="text" id="result" placeholder="Bản dịch"> -->
+        <p id="result"></p>
+        <script>
+            function tranSlate() {
+                let englishWord = ['hello', 'goodbey', 'i', 'love', 'code'];
+                let vietnameseWord = ['xin chào', 'tạm biệt', 'tôi', 'yêu', 'lập trình'];
+                let input = document.getElementById('word').value;
+                
+                if (document.getElementById('language').value == 'english') {
+                    for (i = 0; i < englishWord.length; i++) {
+                        if (input === englishWord[i]) {
+                            document.getElementById('result').innerHTML = vietnameseWord[i];
+                            break;
+                        }else{
+                            document.getElementById('result').innerHTML = 'Not found';
+                        }
+                    }
+                    // if (document.getElementById('result').value==0) alert('Not found');
+
+                } else {
+                    for (i = 0; i < vietnameseWord.length; i++) {
+                        if (input === vietnameseWord[i]) {
+                            document.getElementById('result').innerHTML = englishWord[i];
+                            break;
+                        }else{
+                            document.getElementById('result').innerHTML = 'Not found';
+                        }
+                    }
+                
+
+                }
+               
+               
+            }
+        </script>
+    </form>
+
+</body>
+
+</html>

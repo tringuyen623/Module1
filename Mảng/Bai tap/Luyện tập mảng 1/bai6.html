@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let int = [];
+        let intV = Math.floor(Math.random() * 10);
+        let check = 0;
+        let index = 0;
+        for (i = 0; i < 10; i++) {
+            let n = Math.floor(Math.random() * 10);
+            int.push(n);
+            let count=0;
+            if (int[i] === intV) {
+                check += 1;
+                index = i;
+            }
+        }
+        if (check > 0) {
+            document.write('V is in the array at position: ' + index);
+        } else {
+            document.write('V is not in the array');
+        }
+
+    </script>
+</body>
+
+</html>

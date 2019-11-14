@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let characterArr = [];
+        let number = '0123456789';
+        let count = 0;
+        let text = "";
+        let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        for (var i = 0; i < 10; i++) {
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+            characterArr.push(text);
+        }
+        let str = characterArr.join("")
+        let countNumbers= str.match(/(\d+)/g).length;
+        document.write('The number of array character is: ' + countNumbers);
+    </script>
+</body>
+
+</html>
