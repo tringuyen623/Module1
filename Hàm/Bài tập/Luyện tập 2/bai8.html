@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function reverseArray(arr){
+            return arr.reverse();
+        }
+
+        let lengthOfArray = +prompt('Enter the length of array');
+        let integerArray = [];
+        for (let i = 0; i < lengthOfArray; i++) {
+            integerArray[i] = +prompt('Enter the value of index');
+            while(!Number.isInteger(integerArray[i])){
+                integerArray[i] = +prompt('Enter the value of index gain');
+            }
+        }
+        alert(reverseArray(integerArray));
+    </script>
+</body>
+
+</html>

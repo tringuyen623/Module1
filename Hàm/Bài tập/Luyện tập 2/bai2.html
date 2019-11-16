@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calculateArea(r){
+            const PI = 3.14;
+            let result = 2 * r * 3.14;
+            return result;
+        }
+        function calculatePerimeter(r){
+            const PI = 3.14;
+            let result = r * r * 3.14;
+            return result;
+        }
+
+        let radius = +prompt('Enter the radius'); //The default of Unit is meter.
+        let areaOfCircle = calculateArea(radius);
+        let perimeterOfCircle = calculatePerimeter(radius);
+        document.write(areaOfCircle + ' m<sup>2</sup>');
+        document.write('<br>');
+        document.write(perimeterOfCircle + ' m<sup>2</sup>');
+        
+    </script>
+</body>
+
+</html>

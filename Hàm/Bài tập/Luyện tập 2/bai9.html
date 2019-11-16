@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function lengthOfArray (n){
+            n = +prompt('Enter the length of array');
+            return n;
+        }
+        function createArray(n){
+            let arr = [];
+            for (let i = 0; i < n; i ++){
+                arr[i]=prompt('Enter the value of index');
+            }
+            return arr;
+        }
+
+        function checkCharacter(arr){
+            let character = +prompt('Enter the character')
+            let count = 0;
+            for (let i = 0; i < arr.length; i++){
+                if (arr[i] == character){
+                    count++;
+                }
+            }
+            if (count > 0){
+                return count;
+            }else {
+                return -1;
+            }
+        }
+        function main (){
+            let inputnumber = lengthOfArray();
+            let characterArray = createArray(inputnumber);
+            let result = checkCharacter(characterArray);
+            alert(result);
+        }
+        main ();
+    </script>
+</body>
+
+</html>
