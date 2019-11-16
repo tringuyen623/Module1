@@ -9,14 +9,14 @@
 <body>
     <script>
     let sizeArr=prompt('Enter the size of array');
-    let stringArr=[]
+    let characterArr=[]
     for (i=0; i< sizeArr; i++){
        let n=prompt('Enter the string');
        console.log(n)
-       stringArr.push(n);
+       characterArr.push(n);
     }
-    for (i=0;i<stringArr.length; i++){
-        stringArr[i] = stringArr[i].replace(/-/g,'_');
+    for (i=0;i<characterArr.length; i++){
+        characterArr[i] = characterArr[i].replace(/-/g,'_');
     }
 
 

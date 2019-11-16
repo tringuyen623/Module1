@@ -11,14 +11,11 @@
 <body>
     <script>
         let characterArr = [];
-        let number = '0123456789';
-        let count = 0;
         let text = "";
         let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
         for (var i = 0; i < 10; i++) {
-            text += possible.charAt(Math.floor(Math.random() * possible.length));
-            characterArr.push(text);
+            characterArr[i] = possible.charAt(Math.floor(Math.random() * possible.length));
         }
         let str = characterArr.join("")
         let countNumbers= str.match(/(\d+)/g).length;
