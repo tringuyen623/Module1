@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Temparature = function (celcius) {
+            this.celcius = celcius;
+
+            this.convertCtoF = function () {
+                return this.celcius * 1.8 + 32;
+            }
+            this.convertCtoK = function () {
+                return this.celcius + 273.15;
+            }
+        }
+
+        let convertTemparature = new Temparature(25);
+        let fahrenheit = convertTemparature.convertCtoF();
+        let kelvin = convertTemparature.convertCtoK();
+        document.write((25 + '<sup>o</sup>C') + ' = ' + fahrenheit + '<sup>o</sup>F');
+        document.write('<br>');
+        document.write((25 + '<sup>o</sup>C') + ' = ' + kelvin + 'K');
+    </script>
+</body>
+
+</html>

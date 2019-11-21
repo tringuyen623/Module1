@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p></p>
+    <canvas id="myCanvas" width="768" height="356" style="border:1px solid #d3d3d3"> </canvas> <br>
+
+    <script>
+        class Rectangle {
+            constructor(length, width) {
+                this.length = length;
+                this.width = width;
+            }
+
+
+            getArea() {
+                return this.length * this.width;
+            }
+            getPerimeter() {
+                return (this.length + this.width) * 2;
+            }
+
+
+            drawRectangle() {
+                let ctx = document.getElementById('myCanvas').getContext('2d');
+                ctx.beginPath();
+                ctx.font = "bold 15px Arial";
+                ctx.fillText(`Area of Rectangle is: ${areOfRec} Perimeter: ${perimeter}`, 10, 120);
+                ctx.fillStyle = '#ACFA58';
+                ctx.fillRect(10, 40, this.width, this.length);
+
+
+            }
+        }
+
+        let rectangle = new Rectangle(50, 100);
+        let areOfRec = rectangle.getArea();
+        let perimeter = rectangle.getPerimeter();
+
+        rectangle.drawRectangle();
+
+        // rectangle.length=100;
+        // rectangle.width=200;
+        // areOfRec = rectangle.getArea();
+        // perimeter = rectangle.getPerimeter();
+        // rectangle.drawRectangle();
+
+    </script>
+</body>
+
+</html>
