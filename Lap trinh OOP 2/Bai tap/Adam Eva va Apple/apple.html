@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <table>
+
+            <tr>
+                <td id="adam" align="center"></td>
+                <td id="eva" align="center"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align=center id="apple"></td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="adamEat();">Adam eat</button><br>
+                    <button onclick="adamSpeak();">Adam Speak</button>
+                </td>
+                <td>
+                    <button onclick="evaEat();">Eva eat</button><br>
+                    <button onclick="evaSpeak();">Eva Speak</button>
+                </td>
+            </tr>
+
+        </table>
+
+
+
+
+    </div>
+
+
+    <p id="apple"></p>
+
+    <script>
+        class Apple {
+            constructor(weight) {
+                this.weight = weight;
+            };
+
+            getWeight() {
+                return this.weight;
+            };
+            decrease() {
+                if (this.weight > 0)
+                    this.weight--;
+            };
+            isEmpty() {
+                if (this.getWeight() > 0) {
+                    return true;
+                } else return false;
+            };
+
+        }
+
+        class Human {
+            constructor(name, weight) {
+                this.name = name;
+                this.weight = weight;
+            };
+
+            getWeight() {
+                return this.weight;
+            };
+            eat(apple) {
+                // if (apple.getWeight() >0)
+                this.weight++;
+                apple.decrease();
+
+            };
+            checkApple(apple) {
+                if (apple.isEmpty()) { return true }
+                else return false;
+            };
+            speak() {
+                alert('Hungy')
+            };
+            getInfo() {
+                return `${this.name} <br> ${this.weight} kg`
+            };
+
+        }
+
+        let greenApple = new Apple(10);
+        let Adam = new Human('Adam', 60);
+        let Eva = new Human('Eva', 45);
+
+        function adamEat() {
+
+            if (Adam.checkApple(greenApple)) { Adam.eat(greenApple) }
+            else alert('not enough');
+
+            document.getElementById('adam').innerHTML = Adam.getInfo();
+            document.getElementById('apple').innerHTML = greenApple.getWeight();
+        }
+        function evaEat() {
+            if (Eva.checkApple(greenApple)) { Eva.eat(greenApple) }
+            else alert('not enough');
+
+            document.getElementById('eva').innerHTML = Eva.getInfo();
+            document.getElementById('apple').innerHTML = greenApple.getWeight();
+        }
+        function adamSpeak() {
+            Adam.speak();
+        }
+        function evaSpeak() {
+            Eva.speak();
+        }
+        
+        document.getElementById('adam').innerHTML = Adam.getInfo();
+        document.getElementById('eva').innerHTML = Eva.getInfo();
+        document.getElementById('apple').innerHTML = greenApple.getWeight();
+
+
+    </script>
+</body>
+
+</html>
