@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td><b>Cat</b></td>
+            <td><b>Rats</b></td>
+        </tr>
+        <tr>
+            <td id="cat"></td>
+            <td id="rats"></td>
+        </tr>
+        <p text></p>
+    </table>
+    <button onclick="chase();">Chase rats</button>
+    <button onclick="raiseSpeed();">Raise Speed</button>
+    <button onclick="eat();">Eat</button>
+    <script>
+
+        class Rat {
+            constructor(name, weight, speed) {
+                this.name = name;
+                this.weight = parseFloat(weight);
+                this.speed = speed;
+                this.status = true;
+            };
+
+            getInfo() {
+                return `${this.weight}kg, speed ${this.speed}`;
+            }
+            speak(string) {
+                alert(string);
+            }
+        }
+
+        class Cat {
+            constructor(name, weight, speed) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+                this.maxspeed = 25;
+            };
+
+            getInfo() {
+                return `${this.name}: ${this.weight}kg <br> speed ${this.speed}`;
+            }
+            speak(string) {
+                alert(string);
+            }
+
+            catchRat(Rat) {
+
+                if (this.speed > Rat.speed) {
+                    if (Rat.weight < 3) {
+                        Rat.status = false;
+                    } else { Rat.status = true }
+                    return true;
+                } else { return false }
+            }
+
+            eatRat(Rat) {
+                return this.weight += Rat.weight;
+            }
+
+            raisingSpeed() {
+                return this.speed = this.maxspeed;
+            }
+        }
+
+        let cat = new Cat('Tom', 25, 15);
+        let rats = [];
+
+        let ratName = '';
+        let ratWeight = '';
+        let ratSpeed = '';
+        for (let i = 0; i < 10; i++) {
+            ratName = `Rat ${i}`;
+            ratWeight = Math.floor(Math.random() * 11);
+            ratSpeed = Math.floor(Math.random() * 11) + 10;
+            rats[i] = new Rat(`${ratName}`, ` ${ratWeight}`, `${ratSpeed}`);
+        }
+
+        let checkrat = 0;
+        for (let i = 0; i < rats.length; i++) {
+            function chase() {
+                if (rats.length > 0) {
+                    if (cat.catchRat(rats[i]) === true) {
+                        cat.speak(`chatched ${rats[i].name}`);
+                        document.getElementById('cat').innerHTML = cat.getInfo();
+                        document.getElementById('rats').innerHTML = `${rats[i].name} has been catched <br> ${rats[i].getInfo()}`;
+                        checkrat++;
+                    } else {
+                        alert(`${cat.name}! Rasing your speed!`);
+                    }
+                } else { alert('There are no rat.') }
+            }
+
+            function eat() {
+                if (checkrat > 0) {
+                    if (rats[i].status === true) {
+                        cat.eatRat(rats[i]);
+                        cat.speak(`${cat.name}: Perfect`);
+                        document.getElementById('cat').innerHTML = cat.getInfo();
+                    } else {
+                        cat.speak(`${cat.name}: It dead, catch another`)
+                    }
+                    rats.splice(i, 1);
+                    cat.speed = 15
+                    document.getElementById('cat').innerHTML = cat.getInfo();
+                    document.getElementById('rats').innerHTML = `${rats.length}rats`;
+                    return checkrat = 0;
+
+                } else { alert('Catch rat!') }
+            }
+
+            function raiseSpeed() {
+                cat.raisingSpeed()
+                document.getElementById('cat').innerHTML = cat.getInfo();
+            }
+            document.getElementById('cat').innerHTML = cat.getInfo();
+            document.getElementById('rats').innerHTML = rats.length + ' rats';
+            break;
+        }
+
+    </script>
+</body>
+
+</html>
