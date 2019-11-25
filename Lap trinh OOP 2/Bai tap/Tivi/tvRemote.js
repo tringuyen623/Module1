@@ -76,7 +76,6 @@ class Tivi {
         } else {
             this.currentChannel++;
         }
-
     }
     changeChannelDown() {
         if (this.currentChannel <= 0) {
@@ -105,84 +104,56 @@ class Tivi {
 let samSungTv = new Tivi('ss01');
 
 let remoteSamsung = new Remote(samSungTv);
+function channel (number){
+    switch(number){
+        case 0:
+            document.getElementById('tvstatus').src = "image/nosignal.png"
+            break;
+        case 1:
+            document.getElementById('tvstatus').src = "image/vtv1.png"
+            break;
+        case 2:
+            document.getElementById('tvstatus').src = "image/vtv2.png"
+            break;
+        case 3:
+            document.getElementById('tvstatus').src = "image/vtv3.png"
+            break;
+        case 4:
+            document.getElementById('tvstatus').src = "image/vtv4.png"
+            break;
+        case 5:
+            document.getElementById('tvstatus').src = "image/vtv5.png"
+            break;
+        case 6:
+            document.getElementById('tvstatus').src = "image/vtv6.png"
+            break;
+        case 7:
+            document.getElementById('tvstatus').src = "image/vtv7.png"
+            break;
+        case 8:
+            document.getElementById('tvstatus').src = "image/vtv8.png"
+            break;
+        case 9:
+            document.getElementById('tvstatus').src = "image/vtv9.png"
+            break;
+    }
+}
 
 function changeTivi(button) {
     if (button === 'up') {
         if (samSungTv.status === true) {
             flag = samSungTv.currentChannel;
             samSungTv.changeChannelUp();
-            switch (samSungTv.currentChannel) {
-
-                case 0:
-                    document.getElementById('tvstatus').src = "image/nosignal.png"
-                    break;
-                case 1:
-                    document.getElementById('tvstatus').src = "image/vtv1.png"
-                    break;
-                case 2:
-                    document.getElementById('tvstatus').src = "image/vtv2.png"
-                    break;
-                case 3:
-                    document.getElementById('tvstatus').src = "image/vtv3.png"
-                    break;
-                case 4:
-                    document.getElementById('tvstatus').src = "image/vtv4.png"
-                    break;
-                case 5:
-                    document.getElementById('tvstatus').src = "image/vtv5.png"
-                    break;
-                case 6:
-                    document.getElementById('tvstatus').src = "image/vtv6.png"
-                    break;
-                case 7:
-                    document.getElementById('tvstatus').src = "image/vtv7.png"
-                    break;
-                case 8:
-                    document.getElementById('tvstatus').src = "image/vtv8.png"
-                    break;
-                case 9:
-                    document.getElementById('tvstatus').src = "image/vtv9.png"
-                    break;
-            }
+            channel(samSungTv.currentChannel)
+            
         }
     }
     if (button === 'down') {
         if (samSungTv.status === true) {
             flag = samSungTv.currentChannel;
             samSungTv.changeChannelDown();
-            switch (samSungTv.currentChannel) {
-
-                case 0:
-                    document.getElementById('tvstatus').src = "image/nosignal.png"
-                    break;
-                case 1:
-                    document.getElementById('tvstatus').src = "image/vtv1.png"
-                    break;
-                case 2:
-                    document.getElementById('tvstatus').src = "image/vtv2.png"
-                    break;
-                case 3:
-                    document.getElementById('tvstatus').src = "image/vtv3.png"
-                    break;
-                case 4:
-                    document.getElementById('tvstatus').src = "image/vtv4.png"
-                    break;
-                case 5:
-                    document.getElementById('tvstatus').src = "image/vtv5.png"
-                    break;
-                case 6:
-                    document.getElementById('tvstatus').src = "image/vtv6.png"
-                    break;
-                case 7:
-                    document.getElementById('tvstatus').src = "image/vtv7.png"
-                    break;
-                case 8:
-                    document.getElementById('tvstatus').src = "image/vtv8.png"
-                    break;
-                case 9:
-                    document.getElementById('tvstatus').src = "image/vtv9.png"
-                    break;
-            }
+            channel(samSungTv.currentChannel)
+           
         }
     }
 
@@ -250,42 +221,8 @@ function changeByRemote(button) {
         if (samSungTv.status === true && remoteSamsung.status === true) {
             flag = samSungTv.currentChannel;
             console.log(samSungTv.currentChannel)
-
             remoteSamsung.switchChannelByNum(samSungTv, button);
-            switch (samSungTv.currentChannel) {
-
-                case 0:
-                    document.getElementById('tvstatus').src = "image/nosignal.png"
-                    break;
-                case 1:
-                    document.getElementById('tvstatus').src = "image/vtv1.png"
-                    break;
-                case 2:
-                    document.getElementById('tvstatus').src = "image/vtv2.png"
-                    break;
-                case 3:
-                    document.getElementById('tvstatus').src = "image/vtv3.png"
-                    break;
-                case 4:
-                    document.getElementById('tvstatus').src = "image/vtv4.png"
-                    break;
-                case 5:
-                    document.getElementById('tvstatus').src = "image/vtv5.png"
-                    break;
-                case 6:
-                    document.getElementById('tvstatus').src = "image/vtv6.png"
-                    break;
-                case 7:
-                    document.getElementById('tvstatus').src = "image/vtv7.png"
-                    break;
-                case 8:
-                    document.getElementById('tvstatus').src = "image/vtv8.png"
-                    break;
-                case 9:
-                    document.getElementById('tvstatus').src = "image/vtv9.png"
-                    break;
-            }
-
+            channel(samSungTv.currentChannel)
         }
     }
     prevch = flag
@@ -294,7 +231,6 @@ function changeByRemote(button) {
             flag = samSungTv.currentChannel
             remoteSamsung.switchChannelUp(samSungTv);
             console.log(samSungTv.currentChannel)
-
             switch (samSungTv.currentChannel) {
 
                 case 0:
@@ -335,39 +271,7 @@ function changeByRemote(button) {
             flag = samSungTv.currentChannel
             remoteSamsung.switchChannelDown(samSungTv);
             console.log(samSungTv.currentChannel)
-            switch (samSungTv.currentChannel) {
-
-                case 0:
-                    document.getElementById('tvstatus').src = "image/nosignal.png"
-                    break;
-                case 1:
-                    document.getElementById('tvstatus').src = "image/vtv1.png"
-                    break;
-                case 2:
-                    document.getElementById('tvstatus').src = "image/vtv2.png"
-                    break;
-                case 3:
-                    document.getElementById('tvstatus').src = "image/vtv3.png"
-                    break;
-                case 4:
-                    document.getElementById('tvstatus').src = "image/vtv4.png"
-                    break;
-                case 5:
-                    document.getElementById('tvstatus').src = "image/vtv5.png"
-                    break;
-                case 6:
-                    document.getElementById('tvstatus').src = "image/vtv6.png"
-                    break;
-                case 7:
-                    document.getElementById('tvstatus').src = "image/vtv7.png"
-                    break;
-                case 8:
-                    document.getElementById('tvstatus').src = "image/vtv8.png"
-                    break;
-                case 9:
-                    document.getElementById('tvstatus').src = "image/vtv9.png"
-                    break;
-            }
+            channel(samSungTv.currentChannel)   
         }
     }
 
@@ -377,40 +281,7 @@ function changeByRemote(button) {
             flag = samSungTv.currentChannel
             console.log(prevch, flag)
             remoteSamsung.switchChannelByNum(samSungTv, prevch)
-
-            switch (samSungTv.currentChannel) {
-
-                case 0:
-                    document.getElementById('tvstatus').src = "image/nosignal.png"
-                    break;
-                case 1:
-                    document.getElementById('tvstatus').src = "image/vtv1.png"
-                    break;
-                case 2:
-                    document.getElementById('tvstatus').src = "image/vtv2.png"
-                    break;
-                case 3:
-                    document.getElementById('tvstatus').src = "image/vtv3.png"
-                    break;
-                case 4:
-                    document.getElementById('tvstatus').src = "image/vtv4.png"
-                    break;
-                case 5:
-                    document.getElementById('tvstatus').src = "image/vtv5.png"
-                    break;
-                case 6:
-                    document.getElementById('tvstatus').src = "image/vtv6.png"
-                    break;
-                case 7:
-                    document.getElementById('tvstatus').src = "image/vtv7.png"
-                    break;
-                case 8:
-                    document.getElementById('tvstatus').src = "image/vtv8.png"
-                    break;
-                case 9:
-                    document.getElementById('tvstatus').src = "image/vtv9.png"
-                    break;
-            }
+            channel(samSungTv.currentChannel)
         }
     }
 
@@ -425,14 +296,12 @@ function changeByRemote(button) {
             remoteSamsung.controlVolumeDown(samSungTv);
             console.log(samSungTv.currentVolume);
         }
-
     }
 
     if (button === 'ir') {
         if (samSungTv.status === true) {
             remoteSamsung.connectToTv(samSungTv);
         }
-
     }
     if (button === 'onoff') {
         if (samSungTv.status === true) {
