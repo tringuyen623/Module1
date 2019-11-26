@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let regexp = '';
+
+        const validateAccount = (str) => {
+            regexp = /^[a-z0-9_]{6,}$/;
+            if (regexp.test(str)) {
+                return true
+            }
+            return false;
+        }
+
+        let account1 = 'code_gym'
+        let account2 = '1__code___gym__0'
+        let account3 = 'Code_Gym'
+        console.log(validateAccount(account1))
+        console.log(validateAccount(account2))
+        console.log(validateAccount(account3))
+    </script>
+</body>
+
+</html>
