@@ -13,17 +13,17 @@
         let regexp = '';
 
         const validatePhoneNumber = (str) => {
-            regexp = /^[0-9]{2}(?:-[0][0-9]{9})$/;
+            regexp = /^[\W][0-9]{2}[\W](?:-[\W][0][0-9]{9}[\W])$/;
             if (regexp.test(str)) {
                 return true;
             }
             return false;
         }
 
-        let number1 = '02-0123456789';
+        let number1 = '(02)-(0123456789)';
         let number2 = '02-1234567890';
         let number3 = '0a-0123456789';
-        let number4 = '020123456789';
+        let number4 = '02-0123456789';
         console.log(validatePhoneNumber(number1));
         console.log(validatePhoneNumber(number2));
         console.log(validatePhoneNumber(number3));
