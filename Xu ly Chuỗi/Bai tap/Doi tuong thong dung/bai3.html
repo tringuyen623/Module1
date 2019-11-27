@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str = "Tôi yêu ngôn ngữ lập trình Javascript";
+        let count = 0;
+        for (let i = 0; i < str.length; i++){
+            if (str[i]==="a"){
+                count++;
+            }
+        }
+        console.log(count);
+
+        let newstr = str.trim();
+        newstr = str.split(/\s+/g);
+        console.log(newstr);
+        console.log(`The number of words in this tring is: ${newstr.length}`);
+
+        newstr = str.replace('Javascript', 'Typescript')
+        console.log("TCL: newstr", newstr)
+        
+        
+    </script>
+</body>
+
+</html>
