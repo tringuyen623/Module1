@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let regexp = '';
+
+        const checkPasscode = (str) => {
+            regexp =  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/
+            if (regexp.test(str)) {
+                return true;
+            }
+            return false;
+        }
+       let passcode = prompt('Enter passcode');
+       console.log(checkPasscode(passcode));
+    </script>
+</body>
+
+</html>
